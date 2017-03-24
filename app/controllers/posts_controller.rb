@@ -1,11 +1,37 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   def toggle_follow
-       current_user.toggle_follow!(User.find(params[:user_id]))
-       redirect_to :back
+            current_user.toggle_follow!(User.find(params[:user_id]))
+            redirect_to :back
   end
 
+  def toggle_like
+       current_user.toggle_like!(User.find(params[:user_id]))
+       redirect_to :back
+end
+
+def unlike
+     current_user.unlike!(User.find(params[:user_id]))
+     redirect_to :back
+end
+
+def unfollow
+     current_user.unfollow!(User.find(params[:user_id]))
+     redirect_to :back
   # GET /posts
+  end
+
+  def toggle_like_image
+       current_user.toggle_like!(Post.find(params[:post_id]))
+       redirect_to :back
+ end
+
+ def unlike_image
+      current_user.unlike!(Post.find(params[:post_id]))
+      redirect_to :back
+end
+
   # GET /posts.json
   def index
     @posts = Post.all
@@ -74,6 +100,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:description, :user_id,:post_image, :post_image_cache)
+      params.require(:post).permit(:description, :user_id, :post_id, :post_image, :post_image_cache)
     end
 end

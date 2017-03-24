@@ -10,8 +10,28 @@
   <%= @post.user.email%>
 </p>
 
-<img src ="<%= @post.post_image %>" alt = "image">
-<%= link_to 'Follow', toggle_follow_post_path(user_id: @post.user_id) %>
+<img src ="<%= @post.post_image %>" alt = "image" height= "300px" width = "300px">
+<br>
+<!-- <% if current_user.follows?(@post.user) %>
+     <%= link_to 'Unfollow', unfollow_post_path(user_id: @post.user_id) %>
+<% else%>
+     <%=  link_to 'follow', toggle_follow_post_path(user_id: @post.user_id) %>
+<%end%>
+
+<% if current_user.likes?(User.find_by_id(@post.user_id)) %>
+     <%= link_to 'Unlike User', unlike_post_path(user_id: @post.user_id) %>
+<% else%>
+     <%=  link_to 'Like User', toggle_like_post_path(user_id: @post.user_id) %>
+<%end%>
+
+<% if current_user.likes?(Post.find_by_id(@post.user_id)) %>
+     <%= link_to 'Unlike Post', unlike_image_post_path(post_id: @post.user_id) %>
+<% else%>
+     <%=  link_to 'Like Post', toggle_like_image_post_path(post_id: @post.user_id) %>
+<%end%> -->
+
+
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

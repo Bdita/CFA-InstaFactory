@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          acts_as_follower
          acts_as_followable
+         acts_as_liker
+         acts_as_likeable
 end

@@ -1,19 +1,60 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-@import "materialize/components/color";
- $primary-color: color("purple", "lighten-2") !default;
- $secondary-color: color("yellow", "base") !default;
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "materialize";
+
+// google fonts
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+
+// color variables
+$primary-color: #FAFAFA;
+
+// font family variables
+$font-logo: 'Berkshire Swash', cursive;
+$font-menu: 'Cormorant Garamond', serif;
+
+
+body {
+     font-size: 14px;
+     margin: 0 auto;
+     background-color: $primary-color;
+}
+
+nav {
+  background-color: white;
+  }
+
+      nav a{
+           color: black;
+     }
+
+     nav ul li a{
+       color: black;
+       font-size: 12px;
+       font-family: $font-menu;
+       font-size: 18px;
+       font-weight: 500;
+       text-decoration: none;
+       }
+
+          nav ul li a:hover, a:active {
+               color: black;
+                 text-decoration: none;
+          }
+
+      nav  .brand-logo {
+         color: black;
+         font-size: 25px;
+         font-family: $font-logo;
+         text-decoration: none;
+         }
+
+.glyphicon {
+     padding-right: 10%;
+}
+
+@media screen and (min-device-width: 1280px) and (max-device-width: 1824px) {
+       nav  .brand-logo {
+             margin-left: 20%;
+       }
+ }

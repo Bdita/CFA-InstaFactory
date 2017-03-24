@@ -1,12 +1,13 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">InstaFactory</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="#" class="brand-logo"><span class="glyphicon glyphicon-camera"></span>InstaFactory</a>
+
         <ul class="right hide-on-med-and-down">
         <li><%= link_to "New Post", new_post_path %></li>
-          <li><a href="/posts">Feed</a></li>
-          <li><a href="collapsible.html">Notification</a></li>
-          <li><a href="mobile.html">Profile</a></li>
+          <li ><a href="/posts">Feed</a></li>
+          <!-- <li><a href="#">Notification</a></li>
+          <li><a href="#">Profile</a></li> -->
                     <% if user_signed_in? %>
                     <li>
                     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
@@ -17,11 +18,23 @@
                     </li>
                     <% end %>
         </ul>
+
+        <!--  Mobile collapse button not working-need fixing-->
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+             <li><%= link_to "New Post", new_post_path %></li>
+             <li ><a href="/posts">Feed</a></li>
+             <!-- <li><a href="#">Notification</a></li>
+             <li><a href="#">Profile</a></li> -->
+                      <% if user_signed_in? %>
+                      <li>
+                      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                      </li>
+                      <% else %>
+                      <li>
+                      <%= link_to('Login', new_user_session_path)  %>
+                      </li>
+                      <% end %>
         </ul>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
